@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des candidats</title>
+    <link rel="stylesheet" href="./assets/votes.css">
+    <script src="./assets/vue.global.js"></script>
+    <script src="./assets/votes.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="candidats.html">Liste des candidats</a></li>
+                <li><a href="voter.html">Voter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="app">
+        <h1 class="center">Élections des représentants</h1>
+        <p class="center">{{ nbCandidats }} candidats</p>
+        <section>
+            <article v-for="candidat of listeCandidats">
+                <h2>
+                    {{candidat.nom}} {{candidat.prenom}}
+                </h2>
+                <img :src="candidat.photo" alt="photo du candidat">
+            </article>
+        </section>
+        <button type="button" class="voter">Je vote !</button>
+    </main>
+    <footer>
+        <p>Copyright 2024 DWWM2304</p>
+    </footer>
+</body>
+</html>
